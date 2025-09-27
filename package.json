@@ -1,0 +1,29 @@
+{
+  "name": "api-pedidos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js",
+    "init:knex": "mkdir -p src/db/migrations src/db/seeds && npx knex init && mv knexfile.js src/db/knexfile.js",
+    "knex": "npx knex --knexfile src/db/knexfile.js",
+    "migrate:latest": "npm run knex migrate:latest",
+    "migrate:make": "npm run knex migrate:make",
+    "seed:run": "npm run knex seed:run",
+    "seed:make": "npm run knex seed:make"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "fastify": "^5.6.1",
+    "knex": "^3.1.0",
+    "mysql2": "^3.15.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "npm-run-all": "^4.1.5"
+  }
+}
